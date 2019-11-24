@@ -1,0 +1,33 @@
+<h2>Coders out there</h2>
+
+<div>
+  <label>Coder name:
+    <input #coderName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(coderName.value); coderName.value=''">
+    add
+  </button>
+</div>
+
+
+<ul class="coders">
+  <li *ngFor="let coder of coders" >
+    <a routerLink="/detail/{{coder.id}}">
+    <span class="badge">{{coder.id}}</span> {{coder.name}}
+  </a>
+  </li>
+  <button class="delete" title="delete coder"
+  (click)="delete(coder)">x</button>
+</ul>
+
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
